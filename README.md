@@ -1,14 +1,23 @@
-# Sample Hardhat Project
+pragma solidity ^0.8.9;
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+// Store a single data point and allow fetching/updating of that datapoint
+contract Hello {
 
-Try running some of the following tasks:
+    // data point
+    string public storedData;
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
-# HelloDAPP
+    // counter for updates
+    uint public updateCount;
+
+    event myEventTest(string eventOutput);
+
+    function set(string memory myText) public {
+        storedData = myText;
+        updateCount++; // increment the counter
+        emit myEventTest(myText);
+    }
+
+    function get() public view returns (string memory) {
+        return storedData;
+    }
+}
