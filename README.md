@@ -25,3 +25,18 @@ contract Hello {
         return storedData;
     }
 }
+
+
+cd helloWorld
+ls
+npx hardhat console --network localhost
+
+const Hello = await ethers.getContractFactory("Hello")
+const hello = await Hello.deploy()
+
+await hello.set("Hello world 1")
+await hello.set("Hello world 2")
+await hello.set("Hello world 3")
+
+await hello.updateCount()
+
