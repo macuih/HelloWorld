@@ -1,5 +1,3 @@
-## 🧠 Smart Contract Code (`contracts/Hello.sol`)
-
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
