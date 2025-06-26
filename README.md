@@ -1,5 +1,4 @@
 ```solidity
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
 // Store a single data point and allow fetching/updating of that datapoint
